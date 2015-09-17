@@ -18,37 +18,70 @@ CSCI E-15: Dynamic Web Applications
    	 "Thrones"
    	 );
    	 
+	// array of symbols
+	$symbols_list = Array(
+		"~",
+		"!",
+		"@",
+		"#",
+		"$",
+		"%",
+		"^",
+		"&",
+		"*",
+		"(",
+		")",
+		"-",
+		"_",
+		"+",
+		"="
+	);
+   	 
     
     // function to generate password based on user input
-    function get_password($words) {
+    function get_password($words, $symbols) {
     	
     	// if user has not tried to generate a password yet, show nothing
     	if (count($_POST) == 0) {
     		return;
     	}
     	
+    	// store initial values
     	$password = ""; 
+    	$num_count = $_POST["number_num"];
     	
     	// generate number of words that user requested 
     	for ($i = 0; $i < $_POST['word_num']; $i++) {
+
     		
-    		// generate random index
-    		$index = rand(0, count($words) - 1); 
+    		// add random word to password
+    		$password .= $words[rand(0, count($words) - 1)]; 
     		
-    		// add word to password
-    		$password .= $words[$index]; 
-    		
-    		// do not add - to end of password
+    		// do not add separator to end of password
     		if ($i != $_POST['word_num'] - 1) {
     			$password .= "-"; 
     		} else {
-    			// add number at end if specified
-    			if (isset($_POST['include_number'])) {
-    				$password .= rand(0, 9);
+    			// if numbers to be added at end
+    			if($_POST["number_loc"] == "end") {
+    				
+    				// add as many numbers as specified
+    				for($j = 0; $j < $_POST["number_num"]; $j++) { 
+    					$password .= rand(0, 9);
+    				}
     			}
+    			
+    			// if symbols to be added at end
+    			if($_POST["symbol_loc"] == "end") {
+    				
+    				// add as many symbols as specified
+    				for($j = 0; $j < $_POST["symbol_num"]; $j++) { 
+    				
+    					// add random symbol to password
+    					$password .= $symbols[rand(0, count($symbols) - 1)]; 
+    				}
+    			}
+    			
     		}
-    		
-    		
     	}
     	
     	return $password; 
