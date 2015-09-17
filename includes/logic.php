@@ -17,6 +17,7 @@ CSCI E-15: Dynamic Web Applications
    	 "Stars",
    	 "Thrones"
    	 );
+   	 
     
     // function to generate password based on user input
     function get_password($words) {
@@ -35,7 +36,19 @@ CSCI E-15: Dynamic Web Applications
     		$index = rand(0, count($words) - 1); 
     		
     		// add word to password
-    		$password .= $words[$index] . "-"; 
+    		$password .= $words[$index]; 
+    		
+    		// do not add - to end of password
+    		if ($i != $_POST['word_num'] - 1) {
+    			$password .= "-"; 
+    		} else {
+    			// add number at end if specified
+    			if (isset($_POST['include_number'])) {
+    				$password .= rand(0, 9);
+    			}
+    		}
+    		
+    		
     	}
     	
     	return $password; 
