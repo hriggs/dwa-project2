@@ -15,6 +15,9 @@ CSCI E-15: Dynamic Web Applications
 	<title>DWA15 - xkcd Password Generator</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/styles.css">
+	
+	<?php require 'includes/logic.php'; ?>
+
 </head>
 <body>
 	<div class="container-fluid">
@@ -23,7 +26,7 @@ CSCI E-15: Dynamic Web Applications
 			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 content">
 				<h1>xkcd Password Generator</h1>
 				<p class="description">Description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-				<form>
+				<form method='POST' action='index.php'>
 					<label for='word_num'>Number of Words</label>
 					<input maxlength=1 type='text' name='word_num'>  (Max 9)
 					<br>
@@ -35,10 +38,11 @@ CSCI E-15: Dynamic Web Applications
 					<br>
 					<input type='submit' class='btn btn-primary' value='Generate Password'>
 				</form>
+				<p><?php echo get_password($word_list); /*print_r($_POST);*/ ?></p>
 				<div class="row">
 					<div class="col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
 					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-						<img src="images/password_comic.png" alt="Password comic." class="img-responsive">
+						<a href="http://xkcd.com/936/" target="_blank"><img src="images/password_comic.png" alt="Password comic." class="img-responsive img-thumbnail"></a>
 					</div>
 					<div class="col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
 				</div>
