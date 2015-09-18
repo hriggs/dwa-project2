@@ -32,6 +32,13 @@ CSCI E-15: Dynamic Web Applications
     		return;
     	}
     	
+    	// password can only be generated with valid number input
+    	if ((!is_numeric($_POST["word_num"]) && strlen($_POST["word_num"]) >=1) ||
+    		(!is_numeric($_POST["number_num"]) && strlen($_POST["number_num"]) >=1) ||
+    		(!is_numeric($_POST["symbol_num"]) && strlen($_POST["symbol_num"]) >=1)) {
+    		return "Password can only be generated if text fields contain numbers or are left blank.";
+    	}
+    	
     	// store initial values
     	$password = ""; 
     	$num_count = $_POST["number_num"];
