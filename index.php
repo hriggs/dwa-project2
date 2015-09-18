@@ -28,7 +28,7 @@ CSCI E-15: Dynamic Web Applications
 				<p class="description">Description: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 				<form method="POST" action="index.php">
 					<label for='word_num'>Number of Words:</label>
-					<input maxlength=1 type="text" name="word_num">  (Max 9)
+					<input maxlength=1 type="text" name="word_num" value="4">  (Max 9)
 					<br>
 					<label for="number_num">Number of Numbers:</label>
 					<input maxlength=1 type="text" name="number_num"> (Max 9)
@@ -44,11 +44,11 @@ CSCI E-15: Dynamic Web Applications
 					<input type="radio" name="symbol_loc" value="end" checked>At End 
 					<input type="radio" name="symbol_loc" value="random">Random
 					<br>
-					<label for="separator">Separate Words by:</label>
+					<label for="separator">Separate Words with:</label>
 					<select name="separator">
 						<option value="hyphens">Hyphens</option>
   						<option value="spaces">Spaces</option>
-  						<option value="camel">CamelCase</option>
+  						<option value="nospace">No Characters</option>
 					</select> 
 					<br>
 					<label for="cases">Word Cases:</label>

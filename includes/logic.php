@@ -20,21 +20,7 @@ CSCI E-15: Dynamic Web Applications
    	 
 	// array of symbols
 	$symbols_list = Array(
-		"~",
-		"!",
-		"@",
-		"#",
-		"$",
-		"%",
-		"^",
-		"&",
-		"*",
-		"(",
-		")",
-		"-",
-		"_",
-		"+",
-		"="
+		"~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "="
 	);
    	 
     
@@ -50,6 +36,14 @@ CSCI E-15: Dynamic Web Applications
     	$password = ""; 
     	$num_count = $_POST["number_num"];
     	$symbol_count = $_POST["symbol_num"];
+    	$separator = "";
+    	
+    	// set up how words are separated
+    	if ($_POST["separator"] == "hyphens") { 
+    		$separator = "-";
+    	} elseif($_POST["separator"] == "spaces") { 
+    		$separator = " ";
+    	}
     	
     	// generate number of words that user requested 
     	for ($i = 0; $i < $_POST['word_num']; $i++) {
@@ -76,15 +70,28 @@ CSCI E-15: Dynamic Web Applications
     				$symbol_count--; 
     			}
     		}
-
-    		// add random word to password
-    		$password .= $words[rand(0, count($words) - 1)]; 
     		
+    		// set case of words
+    		if ($_POST["cases"] == "lower") {
+    			
+    			// add random lower case word
+    			$password .= strtolower($words[rand(0, count($words) - 1)]);
+
+    		} elseif ($_POST["cases"] == "upper"){
+    			
+    			// add random upper case word 
+    			$password .= strtoupper($words[rand(0, count($words) - 1)]);
+    		} else {
+    			
+    			// add random word with only 1st letter upper case
+    			$password .= ucfirst($words[rand(0, count($words) - 1)]);
+    		}
+
     		// do not add separator to end of password
     		if ($i != $_POST['word_num'] - 1) {
     			
     			// add separator to password
-    			$password .= "-"; 
+    			$password .= $separator; 
     			
     		} else {
     			
