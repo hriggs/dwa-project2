@@ -33,16 +33,16 @@ CSCI E-15: Dynamic Web Applications
 					<label for="number_num">Number of Numbers:</label>
 					<input maxlength=1 type="text" name="number_num"> (Max 9)
 					<br>
-					<label for="number_loc">Number Locations:</label>
+					<label for="number_loc">Number Location:</label>
 					<input type="radio" name="number_loc" value="end" checked>At End 
 					<input type="radio" name="number_loc" value="random">Random
 					<br>
 					<label for="symbol_num">Number of Symbols:</label>
 					<input maxlength=1 type="text" name="symbol_num">  (Max 9)
 					<br>
-					<label for="symbol_loc">Symbol Locations:</label>
+					<label for="symbol_loc">Symbol Location:</label>
 					<input type="radio" name="symbol_loc" value="end" checked>At End 
-					<input type="radio" name="symnbol_loc" value="random">Random
+					<input type="radio" name="symbol_loc" value="random">Random
 					<br>
 					<label for="separator">Separate Words by:</label>
 					<select name="separator">
