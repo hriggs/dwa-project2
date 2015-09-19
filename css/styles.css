@@ -36,6 +36,19 @@ h1 {
 	margin-top: 1em;
 }
 
+.bold {
+	font-weight: bold;
+}
+
+.br {
+	display: none;
+	height: 0em;
+}
+
+.checkbox, .radio {
+  display: inline;
+}
+
 .btn-primary {
 	margin-top: 1.2em;
 }
@@ -46,6 +59,7 @@ h1 {
 	color: white;
 	padding: 0.75em;
 	font-size: 150%;
+	word-wrap: break-word;
 }
 
 .img-border {
@@ -57,4 +71,36 @@ footer {
 	border-top: 5px solid #286090;
 	margin-top: 2em;
 	padding: 1em 0;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 800px) {
+	
+	.br {
+		display: block;
+	}
+	
+	label {
+		margin-top: 1.5em;
+	}
+}
+
+@media (max-width: 500px) {
+	
+	select {
+		width: 12.5em;
+		font-size: 90%;
+	}
+}
+
+@media (max-width: 400px) {
+	
+	h1 {
+		font-size: 230%;
+	}
+	
+	.form-box {
+		width: 10.5em;
+	}
 }
