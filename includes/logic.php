@@ -37,7 +37,7 @@ CSCI E-15: Dynamic Web Applications
 		for ($j = 0; $j < count($matches[0]); $j++) {
 			
 			// add matches to word list
-			$word_list[] = $matches[0][$j]; 
+			$word_list[] = trim($matches[0][$j]); 
 		}
 		
 		// increment URL values by 2
