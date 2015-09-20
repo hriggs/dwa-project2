@@ -25,7 +25,7 @@ CSCI E-15: Dynamic Web Applications
 			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
 			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 content">
 				<h1><span class="xkcd">xkcd</span> Password Generator</h1>
-				<p class="description">A xkcd password is a password that includes a collection of random words. The idea is that this type of password is easy for humans to remember (unlike the type of passwords we are often told to use that consist of a random assortment of letters, numbers, and symbols), but difficult for a hacker's computer program to guess. See the comic strip below to learn more! </p>
+				<p class="description">A xkcd password is a password that includes a collection of random words. The idea is that this type of password is easy for humans to remember (unlike the type of passwords we are often told to use that consist of a random assortment of letters, numbers, and symbols), but difficult for a hacker's computer program to guess. See the <a href="#comic">comic strip</a> below to learn more! </p>
 				<p class="directions">This web app allows you to generate your own unique xkcd password!<br>Customize your password with the form below or use the default values (four letters with one number and one symbol at the end).<br><span class="bold">Nine is the highest number</span> that can be entered in a text field.</p>
 				<form method="POST" action="index.php">
 					<label for='word_num'>Number of Words:</label>
@@ -88,7 +88,7 @@ CSCI E-15: Dynamic Web Applications
 				<div class="row">
 					<div class="col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
 					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-						<a href="http://xkcd.com/936/" target="_blank"><img src="images/password_comic.png" alt="Password comic." class="img-responsive img-border"></a>
+						<a href="http://xkcd.com/936/" target="_blank" id="comic"><img src="images/password_comic.png" alt="Password comic." class="img-responsive img-border"></a>
 					</div>
 					<div class="col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
 				</div>
