@@ -36,8 +36,12 @@ CSCI E-15: Dynamic Web Applications
 		// store content of website
 		$content = file_get_contents("http://www.paulnoll.com/Books/Clear-English/words-".$first."-".$second."-hundred.html");
 		
+		
+		// BEST: /(?<=<li>)(.*?)(?=<\/li>)/s
 		// add words between <li> </li> tags to list		
-		preg_match_all("/<li>(.*?)<\/li>/s", $content, $matches);
+		//preg_match_all("/<li>(.*)<\/li>/s", $content, $matches);
+		preg_match_all("/(?<=<li>)(.*?)(?=<\/li>)/s", $content, $matches);
+	
 		
 		// loop through matches
 		for ($j = 0; $j < count($matches[0]); $j++) {
@@ -45,6 +49,8 @@ CSCI E-15: Dynamic Web Applications
 			// add matches to word list
 			$word_list[] = $matches[0][$j]; 
 		}
+		
+		echo count($word_list);
 		
 		// increment URL values by 2
 		$first+=2;
