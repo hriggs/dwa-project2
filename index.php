@@ -34,33 +34,33 @@ CSCI E-15: Dynamic Web Applications
 					</div>
 					<input maxlength=1 type="text" name="word_num" value="4" class="form-box">
 					<br>
-					<label for="number_num">Number of Numbers:</label>
+					<label>Number of Numbers:</label>
 					<div class="br">
 						<br>
 					</div>
 					<input maxlength=1 type="text" name="number_num" value="1" class="form-box">
 					<br>
-					<label for="number_loc">Number Location:</label>
+					<label>Number Location:</label>
 					<div class="br">
 						<br>
 					</div>
 					<input type="radio" name="number_loc" value="end" checked>At End 
 					<input type="radio" name="number_loc" value="random">Random
 					<br>
-					<label for="symbol_num">Number of Symbols:</label>
+					<label>Number of Symbols:</label>
 					<div class="br">
 						<br>
 					</div>
 					<input maxlength=1 type="text" name="symbol_num" value="1" class="form-box">
 					<br>
-					<label for="symbol_loc">Symbol Location:</label>
+					<label>Symbol Location:</label>
 					<div class="br">
 						<br>
 					</div>
 					<input type="radio" name="symbol_loc" value="end" checked>At End 
 					<input type="radio" name="symbol_loc" value="random">Random
 					<br>
-					<label for="separator">Separate Words with:</label>
+					<label>Separate Words with:</label>
 					<div class="br">
 						<br>
 					</div>
@@ -70,7 +70,7 @@ CSCI E-15: Dynamic Web Applications
   						<option value="nospace">No Characters</option>
 					</select> 
 					<br>
-					<label for="cases">Word Cases:</label>
+					<label>Word Cases:</label>
 					<div class="br">
 						<br>
 					</div>
