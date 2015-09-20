@@ -13,8 +13,15 @@ via a form.
 <http://demo-site-info-here.com>
 
 ## Details for teaching team
-Challenge details to go here. 
-The site is responsive via Boostrap. 
+The challenges I chose to implement are: allowing the user to specify how many numbers and 
+symbols to include and whether or not they will be at the end or randomly placed between words 
+(there can be a different number of letters and symbols and they can be placed differently),
+allowing the user to choose what the words are separated by (hyphens, spaces or no characters), and 
+allowing the user to choose the case of the words (all upper, all lower or the starting letter
+capitalized). I also scraped the pages of <http://www.paulnoll.com/Books/Clear-English/> to populate
+my array of words. I also did some form error checking: if the user puts in a character that is 
+not a digit, then a message saying a password cannot be created (and why) is displayed.  
+The site is also responsive via Boostrap and media queries. 
 
 ## Outside code
 * Bootstrap: http://getbootstrap.com/
