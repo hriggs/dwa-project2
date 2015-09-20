@@ -21,28 +21,18 @@ CSCI E-15: Dynamic Web Applications
 	$matches = [];
 	
 	// loop through pages of words
-	for ($i = 0; $i < 1; $i++) {
+	for ($i = 0; $i < 2; $i++) {
 		
 		// add 0 to beginning of numbers less than 1
-		if ($first < 10) {
-			$first = "0" . $first;
-		}
-		
-		// add 0 to beginning of numbers less than 1
-		if ($second < 10) { 
-			$second = "0" . $second;
-		}
+		$first = prepend_one($first);
+		$second = prepend_one($second);
 	
 		// store content of website
-		$content = file_get_contents("http://www.paulnoll.com/Books/Clear-English/words-".$first."-".$second."-hundred.html");
+		$content = file_get_contents("http://www.paulnoll.com/Books/Clear-English/words-" . $first . "-" . $second."-hundred.html");
 		
-		
-		// BEST: /(?<=<li>)(.*?)(?=<\/li>)/s
 		// add words between <li> </li> tags to list		
-		//preg_match_all("/<li>(.*)<\/li>/s", $content, $matches);
 		preg_match_all("/(?<=<li>)(.*?)(?=<\/li>)/s", $content, $matches);
 	
-		
 		// loop through matches
 		for ($j = 0; $j < count($matches[0]); $j++) {
 			
@@ -50,15 +40,18 @@ CSCI E-15: Dynamic Web Applications
 			$word_list[] = $matches[0][$j]; 
 		}
 		
-		echo count($word_list);
-		
 		// increment URL values by 2
 		$first+=2;
 		$second+=2;
 	}
    	 
-    
-    // function to generate password based on user input
+  	/*
+ 	 * Generates a password based on form data.
+ 	 *
+ 	 * @param $words words array to use
+ 	 * @param $symbols symbols array to use
+	 * @return password, message about password or nothing if page just loaded.
+	 */
     function get_password($words, $symbols) {
     	
     	// if user has not tried to generate a password yet, show nothing
@@ -153,5 +146,20 @@ CSCI E-15: Dynamic Web Applications
     	}
     	
     	return $password; 
+    }
+    
+   /*
+ 	 * Return a number with a leading zero if the given number is less than one. 
+ 	 *
+ 	 * @param $num number to possibly prepend
+	 * @return a number
+	 */
+    function prepend_one($num) {
+
+		if ($num < 10) {
+			$num = "0" . $num;
+		}
+		
+		return $num;
     }
 ?>
