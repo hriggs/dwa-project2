@@ -11,7 +11,7 @@
 	$matches = [];
 	
 	// loop through pages of words
-	for ($i = 0; $i < 1; $i++) {
+	for ($i = 0; $i < 15; $i++) {
 		
 		// add 0 to beginning of numbers less than 1
 		$first = prepend_one($first);
@@ -35,20 +35,26 @@
 		$second+=2;
 	}
 	
-	$comma_list = "<?php $" . "words = Array(";
-	// create comma-separated list of words in array
+	// store beginning of file content
+	$file_content = "<?php $" . "words = Array(";
+	
+	// loop through list of scraped words
 	for ($k = 0; $k < count($word_list); $k++) {
-		$comma_list .= $word_list[$k];
+		
+		// add words to file content
+		$file_content .= $word_list[$k];
 		
 		// add commas only if not at end of list		
 		if ($k != count($word_list) - 1) {
-			$comma_list .= ",";
+			
+			$file_content .= ",";
 		} else {
-			$comma_list .= "); ?>";
+			
+			// otherwise add the end of the file content
+			$file_content .= "); ?>";
 		}
 	}
 	
-	// put file content into file
-	file_put_contents("includes/words.php", $comma_list);
-
+	// store file content in words file
+	file_put_contents("includes/words.php", $file_content);
 ?>

@@ -15,7 +15,7 @@ CSCI E-15: Dynamic Web Applications
  	 *
  	 * @param $words words array to use
  	 * @param $symbols symbols array to use
-	 * @return password, message about password or nothing if page just loaded.
+	 * @return password, message about password, or nothing if page just loaded.
 	 */
     function get_password($words, $symbols) {
     	
@@ -25,9 +25,10 @@ CSCI E-15: Dynamic Web Applications
     	}
     	
     	// password can only be generated with valid number input
-    	if ((!is_numeric($_POST["word_num"]) && strlen($_POST["word_num"]) >=1) ||
-    		(!is_numeric($_POST["number_num"]) && strlen($_POST["number_num"]) >=1) ||
-    		(!is_numeric($_POST["symbol_num"]) && strlen($_POST["symbol_num"]) >=1)) {
+    	if ((!is_numeric($_POST["word_num"]) && strlen($_POST["word_num"]) >= 1) ||
+    		(!is_numeric($_POST["number_num"]) && strlen($_POST["number_num"]) >= 1) ||
+    		(!is_numeric($_POST["symbol_num"]) && strlen($_POST["symbol_num"]) >= 1)) {
+    			
     		return "Password can only be generated if text fields contain numbers or are left blank.";
     	}
     	
@@ -44,7 +45,7 @@ CSCI E-15: Dynamic Web Applications
     		$separator = " ";
     	}
     	
-    	// generate number of words that user requested 
+    	// loop as many times as number of words that user requested 
     	for ($i = 0; $i < $_POST['word_num']; $i++) {
     		
     		// if numbers to be added randomly and still numbers to be added

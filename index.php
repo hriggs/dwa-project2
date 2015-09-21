@@ -1,8 +1,3 @@
-<?php
-error_reporting(E_ALL);       # Report Errors, Warnings, and Notices
-ini_set('display_errors', 1); # Display errors on page (instead of a log file)
-?>
-
 <!DOCTYPE html>
 <!-- 
 Hannah Riggs
@@ -17,7 +12,12 @@ CSCI E-15: Dynamic Web Applications
 	<link rel="stylesheet" href="css/styles.css">
 	
 	<?php require "includes/logic.php"; ?>
+	
+	<!--
+	In order to increase loading time, only include if a words.php file of scraped words not generated yet
 	<?php require "includes/scrape-pages.php"; ?>
+	-->
+	
 	<?php require "includes/words.php"; ?>
 
 </head>
