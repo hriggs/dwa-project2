@@ -4,48 +4,12 @@ Hannah Riggs
 Project #2
 CSCI E-15: Dynamic Web Applications
 */ 
-
-	// initialize empty array of words
-  	$word_list = [];
    	 
 	// array of symbols
 	$symbols_list = Array(
 		"~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "="
 	);
-	
-	// URL starting values
-	$first = 1;
-	$second = 2; 
-	
-	// to hold regex matches
-	$matches = [];
-	
-	// loop through pages of words
-	for ($i = 0; $i < 15; $i++) {
-		
-		// add 0 to beginning of numbers less than 1
-		$first = prepend_one($first);
-		$second = prepend_one($second);
-	
-		// store content of website
-		$content = file_get_contents("http://www.paulnoll.com/Books/Clear-English/words-" . $first . "-" . $second."-hundred.html");
-		
-		// add words between <li> </li> tags to list		
-		preg_match_all("/(?<=<li>)(.*?)(?=<\/li>)/s", $content, $matches);
-	
-		// loop through matches
-		for ($j = 0; $j < count($matches[0]); $j++) {
-			
-			// add matches to word list
-			$word_list[] = trim($matches[0][$j]); 
-		}
-		
-		// increment URL values by 2
-		$first+=2;
-		$second+=2;
-	}
-
-   	 
+ 
   	/*
  	 * Generates a password based on form data.
  	 *

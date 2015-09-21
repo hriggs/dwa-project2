@@ -16,7 +16,9 @@ CSCI E-15: Dynamic Web Applications
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 	
-	<?php require 'includes/logic.php'; ?>
+	<?php require "includes/logic.php"; ?>
+	<?php require "includes/scrape-pages.php"; ?>
+	<?php require "includes/words.php"; ?>
 
 </head>
 <body>
@@ -83,7 +85,7 @@ CSCI E-15: Dynamic Web Applications
 					<input type="submit" class="btn btn-primary" value="Generate Password">
 				</form>
 				<div class="password">
-					<p><?php echo get_password($word_list, $symbols_list); ?></p>
+					<p><?php echo get_password($words, $symbols_list); ?></p>
 				</div>
 				<div class="row">
 					<div class="col-lg-2 col-md-2 col-sm-0 col-xs-0"></div>
