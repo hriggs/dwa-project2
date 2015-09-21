@@ -21,7 +21,7 @@ CSCI E-15: Dynamic Web Applications
 	$matches = [];
 	
 	// loop through pages of words
-	for ($i = 0; $i < 2; $i++) {
+	for ($i = 0; $i < 15; $i++) {
 		
 		// add 0 to beginning of numbers less than 1
 		$first = prepend_one($first);
@@ -44,6 +44,7 @@ CSCI E-15: Dynamic Web Applications
 		$first+=2;
 		$second+=2;
 	}
+
    	 
   	/*
  	 * Generates a password based on form data.
