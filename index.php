@@ -12,13 +12,13 @@ CSCI E-15: Dynamic Web Applications
 	<link rel="stylesheet" href="css/styles.css">
 	
 	<?php require "includes/logic.php"; ?>
+	<?php require "includes/words.php"; ?>
 	
 	<!--
-	In order to increase loading time, only include if a words.php file of scraped words not generated yet
-	<?php require "includes/scrape-pages.php"; ?>
+	In order to increase loading time, 
+	only include includes/scrape-pages.php 
+	if a words.php file of scraped words not generated yet
 	-->
-	
-	<?php require "includes/words.php"; ?>
 
 </head>
 <body>
