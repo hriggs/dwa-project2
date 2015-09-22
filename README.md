@@ -10,7 +10,7 @@ to randomly generate this style of password. The user has the option to customiz
 via a form. 
 
 ## Demo
-<http://demo-site-info-here.com>
+<https://youtu.be/o1Ioq2hB_6I>
 
 ## Details for teaching team
 The challenges I chose to implement are: allowing the user to specify how many numbers and 
@@ -23,6 +23,8 @@ an array of words that is saved in a separate PHP file (so that the pages are no
 page is loaded in order to speed up loading time). I also did some form error checking: if the user puts in 
 a character that is not a digit, then a message saying a password cannot be created (and why) is displayed.  
 The site is also responsive via Boostrap and media queries. 
+I also want to apologize about the white noise in the background of my demo video! I tried to record the video 
+in different ways, but nothing seemed to fix the issue. 
 
 ## Outside code
 * Bootstrap: <http://getbootstrap.com/>
