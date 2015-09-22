@@ -29,7 +29,7 @@ CSCI E-15: Dynamic Web Applications
 				<h1><span class="xkcd">xkcd</span> Password Generator</h1>
 				<p class="description">A xkcd password is a password that includes a collection of random words. The idea is that this type of password is easy for humans to remember (unlike the type of passwords we are often told to use that consist of a random assortment of letters, numbers, and symbols), but difficult for a hacker's computer program to guess. See the <a href="#comic">comic strip</a> below to learn more! </p>
 				<p class="directions">This web app allows you to generate your own unique xkcd password!<br>Customize your password with the form below or use the default values (four letters with one number and one symbol at the end).<br><span class="bold">Nine is the highest number</span> that can be entered in a text field.</p>
-				<form method="POST" action="index.php">
+				<form method="GET" action="index.php">
 					<label>Number of Words:</label>
 					<div class="br">
 						<br>
