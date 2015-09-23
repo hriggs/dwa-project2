@@ -28,3 +28,4 @@ in different ways, but nothing seemed to fix the issue.
 
 ## Outside code
 * Bootstrap: <http://getbootstrap.com/>
+* Image: <http://xkcd.com/license.html>
